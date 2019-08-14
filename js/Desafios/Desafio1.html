@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Exercicio 1
+
+      var endereco = {
+        rua: "Alameda Casa Branca",
+        numero: 520,
+        bairo: "mirante",
+        cidade: "Mogi Mirim",
+        uf: "SP"
+      };
+
+      console.log(`o usuario mora em ${endereco.cidade} / ${
+        endereco.uf
+      }, no bairo 
+  ${endereco.bairo}, na rua ${endereco.rua} no numero ${endereco.numero}`);
+
+      // Exercicio 2
+
+      function pares(x, y) {
+        for (let i = x; i < y; i++) {
+          if (i % 2 === 0) {
+            console.log(i);
+          }
+        }
+      }
+      pares(1, 10);
+
+      // Exercico 3
+
+      var skins = ["Javascript", "React", "Node"];
+
+      function temHabilidade(skins) {
+        for (let index = 0; index < skins.length; index++) {
+          if (skins[index] === "Javascript") {
+            console.log(true);
+          }
+        }
+      }
+
+      temHabilidade(skins);
+
+      //Exercicio 4
+
+      var anosEstudo = 3;
+
+      function experience(anos) {
+        if (anos > 0 && anos <= 1) {
+          console.log("Iniciante");
+        } else if (anos > 1 && anos <= 3) {
+          console.log("Intermediario");
+        } else if (anos > 3 && anos <= 6) {
+          console.log("Avançado");
+        } else {
+          console.log("nija");
+        }
+      }
+
+      experience(anosEstudo);
+
+      // Exercicio 5
+
+      var usuarios = [
+        {
+          nome: "Wellington",
+          habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+          nome: "Gabriel",
+          habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+      ];
+
+      function exibeHabilidades(usuarios){
+        for (usuario of usuarios){
+          console.log(`O usuario ${usuario.nome} possui as habilidades ${usuario.habilidades.join(',')}`)
+        }
+      }
+      exibeHabilidades(usuarios);
+    </script>
+  </body>
+</html>
