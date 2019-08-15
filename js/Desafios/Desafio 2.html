@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body id="app">
+    <button id="botao">Cliqui aqui</button>
+    <div id="box"></div>
+
+    <input type="text" name="nome" />
+    <button id="adicionar" onClick="adicionar()">Adicionar</button>
+    <ul></ul>
+
+    <script>
+      //Exercicios 1 e 2
+      var buttonElement = document.querySelector("#botao");
+      var box = document.getElementById("box");
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      buttonElement.onclick = function() {
+        var quadrado = document.createElement("div");
+
+        quadrado.style.width = 100 + "px";
+        quadrado.style.height = 100 + "px";
+        quadrado.style.background = "#f00";
+        quadrado.style.marginTop = 10 + "px";
+
+        quadrado.onmousemove = function() {
+          quadrado.style.backgroundColor = getRandomColor();
+        };
+        box.appendChild(quadrado);
+      };
+
+      // Exercicios 3 e 4
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      var ulElements = document.querySelector("ul");
+      var ativar = document.querySelector("#adicionar");
+      var inputElement = document.querySelector("input");
+
+      function adicionar() {
+        add(inputElement.value);
+        inputElement.value = "";
+      }
+      function add(text) {
+        var li = document.createElement("li");
+        var conteudo = document.createTextNode(text);
+
+        li.appendChild(conteudo);
+        ulElements.appendChild(li);
+      }
+      for (nome of nomes) {
+        add(nome);
+      }
+    </script>
+  </body>
+</html>
